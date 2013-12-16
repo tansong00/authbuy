@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/theme.css" media="all">
+    <script type="text/javascript" src="bootstrap/js/jquery_1_8.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="w-login">
+    <div class="navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content login">
+            <div class="row-fluid">
+                <div class="well">
+                    <div class="logo"><img alt="Login-tmp-logo" src="images/login-tmp-logo-6caef67f31b15ff912e354181a6cec4d.gif" height="35" width="379"></div>
+                    <form accept-charset="UTF-8" action="" class="simple_form form-horizontal padd" method="post" novalidate="novalidate">
+                        <div style="margin: 0; padding: 0; display: inline;">
+                            <input name="authenticity_token" value="" type="hidden">
+                        </div>
+                        <div class="control-group string required user_email">
+                            <label class="string required control-label" for="user_email"><abbr title="required">*</abbr> Email</label>
+                            <div class="controls">
+                                <input value="" class="string required" id="user_email" name="user[email]" type="text">
+                            </div>
+                        </div>
+                        <div class="control-group password required user_password">
+                            <label class="password required control-label" for="user_password"><abbr title="required">*</abbr> Password</label>
+                            <div class="controls">
+                                <input class="password required" id="user_password" name="user[password]" type="password">
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <button class="btn" name="commit">Login</button>
+                            <span class="help-inline"><a href="#">Forgot your password?</a></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="info">
+                    <strong>Need an account?</strong> Contact&nbsp;<a href="#">Locomote</a> to organise a demonstration.
+                </div>
+                <div class="w-copy">
+                    <ul>
+                        <li><a class="info-link" href="#">Terms of Use</a></li>
+                        <li>|</li>
+                        <li><a class="info-link" href="#">Privacy Policy</a></li>
+                    </ul>
+                    <span class="copy">© Locomote Technologies Trading Pty Ltd</span></div>
+            </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>
