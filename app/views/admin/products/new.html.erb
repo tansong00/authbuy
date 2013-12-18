@@ -1,0 +1,78 @@
+<div class="content">
+  <div class="header">
+    <h1 class="page-title">Create Product</h1>
+  </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+
+        <!--	<div class="btn-toolbar">
+                <button class="btn btn-primary"><i class="icon-save"></i> Save</button>
+                <a href="#myModal" data-toggle="modal" class="btn">Delete</a>
+                <div class="btn-group"></div>
+            </div>-->
+
+        <div class="well">
+
+          <%= form_for @product, url: admin_products_path, class: 'form-vertical' do |f| %>
+
+              <p class="help-block">
+              <ul>
+          <% for message in @product.errors.full_messages %>
+              <li><%= message %></li>
+          <% end %>
+               </ul>
+              </p>
+
+
+              <label class="required" for="Product_product_name">产品名称 <span class="required">*</span></label>
+              <%= f.text_field :title, class: 'span4' %>
+              <% @parent_categories = Category.where(:parent_id => 0) %>
+              <label class="required" for="Product_category_id">产品类型 <span class="required">*</span></label>
+              <%= select_tag 'product[category_id]',options_from_collection_for_select(@parent_categories,'id','name',@product.category_id) %>
+
+              <label class="required" for="Product_price">产品价格 <span class="required">*</span></label>
+              <%= f.text_field :price, class: 'span3' %>
+              <label class="required" for="Product_img_path">产品图片 <span class="required">*</span></label>
+              <%= f.file_field :photo %>
+              <label class="required" for="Product_description">产品详情 <span class="required">*</span></label>
+              <%= f.text_area :description, class: 'span5',size: '"30x10"' %>
+              <div class="form-actions">
+                <%= submit_tag 'Create', class: 'btn btn-primary' %>
+                <button name="yt1" type="reset" class="btn btn-primary">Reset</button>
+              </div>
+
+
+          <% end %>
+
+        </div>
+
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal small hide fade">
+          <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">脳</button>
+            <h3 id="myModalLabel">Delete Confirmation</h3>
+          </div>
+          <div class="modal-body">
+
+            <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the user?</p>
+          </div>
+          <div class="modal-footer">
+            <button aria-hidden="true" data-dismiss="modal" class="btn">Cancel</button>
+            <button data-dismiss="modal" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+
+
+
+        <footer>
+          <hr>
+
+          <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
+          <p class="pull-right">A <a target="_blank" href="http://www.portnine.com/bootstrap-themes">Free Bootstrap Theme</a> by <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+
+          <p>&copy; 2012 <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+        </footer>
+
+      </div>
+    </div>
+</div>

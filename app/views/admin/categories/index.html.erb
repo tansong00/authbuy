@@ -1,0 +1,64 @@
+
+<div class="content">
+
+  <div class="header">
+    <h1 class="page-title">Category Maneger</h1>
+  </div>
+
+  <ul class="breadcrumb">
+    <li><a href="">Home</a> <span class="divider">/</span></li>
+    <li><a href="">分类管理</a> <span class="divider">/</span></li>
+    <li class="active">Data</li>
+  </ul>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="btn-toolbar">
+        <h3><%= link_to '新建分类' ,new_admin_category_path %></h3>
+        <div class="btn-group">
+        </div>
+      </div>
+    </div>
+    <div class="well">
+      <div class="grid-view" id="product-grid">
+        <div class="summary"></div>
+        <table class="items table table-striped">
+          <thead>
+          <tr>
+            <th id="product-grid_c0">分类ID</th><th id="product-grid_c1">分类名称</th><th id="product-grid_c3">创建时间</th><th id="product-grid_c4" class="button-column">Options</th></tr>
+          </thead>
+          <tbody>
+          <% @parent_categories.each do |category| %>
+              <tr class="odd">
+                <td><%= category.id %></td>
+                <td><%= category.name %></td>
+                <td><%= category.created_at.strftime("%y-%m-%d %H:%M:%S") %></td>
+                <td><%= link_to '查看', admin_category_path(category) %><span class="separator">|</span><%= link_to '编辑',edit_admin_category_path(category) %><span class="separator">|</span><%= link_to '删除',admin_category_path(category), :method => :delete %></td>
+                <!--<td class="button-column">
+                  <a href="#" rel="tooltip" title="" class="view" data-original-title="查看"></a>
+                  <a href="#" rel="tooltip" title="" class="update" data-original-title="更新"><i class="icon-pencil"></i></a>
+                  <a href="#" rel="tooltip" title="" class="delete" data-original-title="删除"><i class="icon-trash"></i></a>
+                </td>  -->
+              </tr>
+
+          <% end %>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <%= paginate @parent_categories %>
+      </div>	</div>
+    <div class="pagination">
+      <ul></ul>
+    </div>
+
+    <footer>
+      <hr>
+
+      <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
+      <p class="pull-right">A <a target="_blank" href="http://www.portnine.com/bootstrap-themes">Free Bootstrap Theme</a> by <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+
+      <p>&copy; 2012 <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+    </footer>
+
+  </div>
+</div>

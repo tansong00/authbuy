@@ -1,0 +1,68 @@
+
+
+
+
+<div class="content">
+
+  <div class="header">
+    <h1 class="page-title">Product Maneger</h1>
+  </div>
+
+  <ul class="breadcrumb">
+    <li><a href="">Home</a> <span class="divider">/</span></li>
+    <li><a href="">产品管理</a> <span class="divider">/</span></li>
+    <li class="active">Data</li>
+  </ul>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="btn-toolbar">
+        <h3><%= link_to '新建产品' ,new_admin_product_path %></h3>
+        <div class="btn-group">
+        </div>
+      </div>
+    </div>
+    <div class="well">
+      <div class="grid-view" id="product-grid">
+        <div class="summary">第 1-10 条, 共 13 条.</div>
+        <table class="items table table-striped">
+          <thead>
+          <tr>
+            <th id="product-grid_c0">产品ID</th><th id="product-grid_c1">产品名称</th><th id="product-grid_c2">产品价格</th><th id="product-grid_c3">发布时间</th><th id="product-grid_c4" class="button-column">&nbsp;</th></tr>
+          </thead>
+          <tbody>
+          <% @products.each do |product| %>
+              <tr class="odd">
+                <td><%= product.id %></td>
+                <td><%= product.title.force_encoding('utf-8') %></td>
+                <td><%= product.price %></td>
+                <td><%= product.created_at.strftime("%y-%m-%d %H:%M:%S") %></td>
+                <td><%= link_to '查看', admin_product_path(product) %><span class="separator">|</span><%= link_to '编辑',edit_admin_product_path(product) %><span class="separator">|</span><%= link_to '删除',admin_product_path(product), :method => :delete %></td>
+                <!--<td class="button-column">
+                  <a href="#" rel="tooltip" title="" class="view" data-original-title="查看"></a>
+                  <a href="#" rel="tooltip" title="" class="update" data-original-title="更新"><i class="icon-pencil"></i></a>
+                  <a href="#" rel="tooltip" title="" class="delete" data-original-title="删除"><i class="icon-trash"></i></a>
+                </td>  -->
+              </tr>
+
+          <% end %>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <%= paginate @products %>
+      </div>	</div>
+    <div class="pagination">
+      <ul></ul>
+    </div>
+
+    <footer>
+      <hr>
+
+      <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
+      <p class="pull-right">A <a target="_blank" href="http://www.portnine.com/bootstrap-themes">Free Bootstrap Theme</a> by <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+
+      <p>&copy; 2012 <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+    </footer>
+
+  </div>
+</div>

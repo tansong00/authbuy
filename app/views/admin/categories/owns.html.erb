@@ -1,0 +1,4 @@
+<% @second_categories.each do |s| %>
+    <%= s.name.force_encoding('utf-8')  %>
+<% end %>
+<%= link_to '新建分类' , url: new_admin_category_path %>
