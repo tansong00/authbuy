@@ -2,13 +2,13 @@
   <div class="container mid_cont pad8">
     <div class="row-fluid w-product">
       <div class="cs-boxcontent clearfix">
-        <div class="pfimg"><img src="images/cs-mbe.jpg" style="border: 0 solid; float: right; margin-right: -40px;" class="folioimgmargin" alt="MBE Education"></div>
+        <div class="pfimg"><img src="/images/cs-mbe.jpg" style="border: 0 solid; float: right; margin-right: -40px;" class="folioimgmargin" alt="MBE Education"></div>
         <div class="cs-left">
           <h5>MBE Education</h5>
           <div class="dotted-break1"></div>
           <p>MBE Education is a business that brings together the best business minds in the country to teach business owners how to maximise the value of their business. The team at MBE approached Locomote to re-develop their existing website into a more engaging online presence and to increase their conversion rate.</p>
           <div class="dotted-break2"></div>
-          <img alt="" src="images/web-dev_small.jpg" class="cs-icons"><img alt="" src="images/digital-strategy-small.jpg" class="cs-icons"> <a href="#" class="view-more1 fltrt"><span>View More</span></a>
+          <img alt="" src="/images/web-dev_small.jpg" class="cs-icons"><img alt="" src="/images/digital-strategy-small.jpg" class="cs-icons"> <a href="#" class="view-more1 fltrt"><span>View More</span></a>
           <div class="clear"></div>
           <div class="dotted-break2"></div>
         </div>
@@ -16,100 +16,18 @@
       </div>
       <div class="row innerpad1 h_cont pad7 tab1 product-list">
         <div class="trans hover" id="backBoard"></div>
+        <% @products.each do |product| %>
         <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg01.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
+          <dt><a href="products/<%= product.id %>"> <%= image_tag product.photo.url(:middle) %></a></dt>
+          <dd class="red">Price: <em>US</em> $<%= product.price%></dd>
+          <dd class="lightGray"><%= product.created_at.strftime("%y-%m-%d") %></dd>
         </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg02.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg03.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg04.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg05.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg06.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg03.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg02.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg01.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg02.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg03.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg04.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg05.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg06.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg03.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
-        <dl class="proItem">
-          <dt><a href="#"><img src="images/middleImg02.jpg" alt=""/></a></dt>
-          <dd class="red">Price: <em>US</em> $128.00</dd>
-          <dd class="lightGray">Date: Oct 25th, 2013</dd>
-        </dl>
+
+        <% end %>
+
       </div>
       <div class="pagination pagination-right innerpad1">
-        <ul>
-          <li><a href="#">&larr; Prev</a></li>
-          <li><a href="#">1</a></li>
-          <li class="active"><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li class="disabled"><a href="#">...</a></li>
-          <li><a href="#">9</a></li>
-          <li><a href="#">10</a></li>
-          <li><a href="#">Next &rarr;</a></li>
-        </ul>
+          <%= paginate @products %>
       </div>
     </div>
   </div>

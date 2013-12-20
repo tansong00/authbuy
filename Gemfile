@@ -47,3 +47,4 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'paperclip'
 gem 'kaminari'
+gem 'ckeditor'

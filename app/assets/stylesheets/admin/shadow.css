@@ -1,0 +1,262 @@
+
+#SLlogo, #SL_shadow_button {
+    background: url("chrome://imtranslator/skin/imtranslator-s.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    height: 24px;
+    position: absolute;
+    width: 24px;
+}
+#SLlogo {
+    position: relative;
+}
+#SL_tts, .SL_copy, .SL_copy_auto {
+    background: url("chrome://imtranslator/skin/tts-voice.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+}
+#SLDONATE {
+    background: url("chrome://imtranslator/skin/donate2.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 14px;
+    margin-left: 245px;
+    margin-top: -12px;
+    position: absolute;
+    width: 64px;
+}
+#SL_sel_source {
+    margin-left: 25px;
+    width: 300px;
+}
+.SL_copy {
+    background: url("chrome://imtranslator/skin/copy.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+}
+.SL_copy_auto {
+    background: url("chrome://imtranslator/skin/copy_auto.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+}
+.SL_pin_off, .SL_pin_on {
+    background: url("chrome://imtranslator/skin/pin-off.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 16px;
+    margin-left: 20px;
+    width: 16px;
+}
+.SL_pin_on {
+    background: url("chrome://imtranslator/skin/pin-on.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    margin-top: -3px;
+}
+.SL_font_off, .SL_font_on {
+    background: url("chrome://imtranslator/skin/font-on.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+}
+.SL_font_off {
+    background: url("chrome://imtranslator/skin/font-off.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+}
+.SL_small_options_switch_on, .SL_small_options_switch_off {
+    background: url("chrome://imtranslator/skin/options-off.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 16px;
+    margin-left: 256px;
+    width: 94px;
+}
+.SL_small_options_switch_on {
+    background: url("chrome://imtranslator/skin/options-on.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+}
+.SL_small_tooltips_switch_on, .SL_small_tooltips_switch_off {
+    background: url("chrome://imtranslator/skin/tooltips-off.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 16px;
+    margin-top: -16px;
+    position: absolute;
+    width: 94px;
+}
+.SL_small_tooltips_switch_on {
+    background: url("chrome://imtranslator/skin/tooltips-on.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+}
+#SLtopbar {
+    height: 25px;
+    margin: 1px;
+    padding: 1px;
+    width: 340px;
+}
+#SLonoffTEXT {
+    color: #008000;
+    font-size: 10px;
+}
+#SLonoff {
+    height: 0;
+    width: 0;
+}
+#SL_shadow_balloon {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BAB9B5;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px #BAB9B5;
+    direction: ltr;
+    font-family: Verdana,Sans-serif;
+    font-size: 12px;
+    left: -1000px;
+    position: absolute;
+    text-align: left;
+    top: -1000px;
+    unicode-bidi: bidi-override;
+    width: 350px;
+    z-index: 2147483647;
+}
+#SL_shadow_button {
+    cursor: pointer;
+    left: 100px;
+    opacity: 0.5;
+    top: 100px;
+    z-index: 9999;
+}
+#SLplanshet {
+    background: none repeat scroll 0 0 threedface;
+    border: 1px solid #BAB9B5;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+    font-size: 12px;
+    height: 28px;
+    margin-left: -1px;
+    margin-top: -1px;
+    position: relative;
+    width: 350px;
+    z-index: 999999999;
+}
+#SLarrowTOP, #SLarrowBOT {
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) threedface;
+    border-style: solid;
+    border-width: 10px;
+    display: block;
+    height: 0;
+    left: 165px;
+    position: absolute;
+    width: 0;
+}
+#SLtriggerKey {
+    background: url("chrome://imtranslator/skin/triggerkey.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    height: 10px;
+    margin-bottom: 5px;
+    margin-left: 28px;
+    margin-top: 5px;
+    width: 13px;
+}
+#SLarrowTOP {
+    top: -20px;
+}
+#SLarrowBOT {
+    border-color: #FFFFFF rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+#SLto, #SLfrom, #SLcontrols, #SL_tip {
+    color: #000000;
+    font-family: Verdana,Sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    width: 90px;
+}
+#SLto {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BABABA;
+    height: 20px;
+}
+#SLfrom {
+    margin-left: 5px;
+}
+#SL_result {
+    -moz-hyphens: auto;
+    color: #000000;
+    font-family: Verdana,Sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: relative;
+    text-align: left;
+    width: 96%;
+    word-break: normal;
+    z-index: 999999999;
+}
+#SLcontrols {
+    font-size: 11px;
+    margin-left: 8px;
+    margin-top: 8px;
+    text-align: left;
+    width: 98%;
+}
+#SL_tip, #SL_small_tooltips {
+    color: #FF0000;
+    font-size: 10px;
+    margin: 8px;
+    text-align: left;
+    width: 98%;
+}
+#SLoptionsKey, #SLfrom_options {
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+}
+#SLfrom_options {
+    width: 140px;
+}
+#SL_select_patch, #SL_select2_patch {
+    background: url("chrome://imtranslator/skin/patch.png") repeat scroll left top rgba(0, 0, 0, 0);
+    height: 18px;
+    margin-left: -1px;
+    margin-top: -1px;
+    position: absolute;
+    width: 65px;
+    z-index: 9999;
+}
+#SL_select2_patch {
+    margin-left: 155px;
+    margin-top: -17px;
+    width: 150px;
+}
+.SLtable, .SLtd {
+    border: 0 none;
+    color: #000000;
+    font-family: Verdana,Sans-serif;
+    font-size: 11px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+}
+.SLaligner, .SLaligner2 {
+    color: #000000;
+    font-family: Verdana,Sans-serif;
+    font-size: 11px;
+    height: 18px;
+    margin: 3px;
+    text-align: left;
+}
+.SLaligner2 {
+    margin-top: 8px;
+    width: 70px;
+}
+.SLselectbox, #SLoptionsKey, #SLfrom_options {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BABABA;
+    color: #000000;
+    font-family: Verdana,Sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    height: 16px;
+}
+#SLspacer {
+    height: 20px;
+    margin-bottom: 5px;
+    margin-top: -3px;
+    text-align: left;
+}
+.SL_sesultLTRRTL {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: bidi-override;
+}

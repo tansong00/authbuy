@@ -3,11 +3,91 @@
 <head>
   <title>后台管理</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "admin/application.css", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav pull-right">
 
+      <li><a role="button" class="hidden-phone visible-tablet visible-desktop" href="#">设置</a></li>
+      <li class="dropdown" id="fat-menu">
+        <a data-toggle="dropdown" class="dropdown-toggle" role="button" href="#">
+          <i class="icon-user"></i> admin                            <i class="icon-caret-down"></i>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li><a href="#" tabindex="-1">我的账户</a></li>
+          <li class="divider"></li>
+          <li><a href="#" class="visible-phone" tabindex="-1">Settings</a></li>
+          <li class="divider visible-phone"></li>
+          <li><a tabindex="-1" href="">退出系统</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    <a href="" class="brand"><span class="first">Your</span> <span class="second">Company</span></a>
+  </div>
+</div>
+<div class="sidebar-nav">
+  <a data-toggle="collapse" class="nav-header" href="#dashboard-menu"><i class="icon-pencil"></i>文章管理</a>
+  <ul class="nav nav-list collapse in" id="dashboard-menu">
+    <li><%= link_to '新建文章',new_admin_article_path %></li>
+    <li><%= link_to '文章列表',admin_articles_path %></li>
+    <li><%= link_to '新建文章类型',new_admin_type_path %></li>
+    <li><%= link_to '文章类型管理',admin_types_path %></li>
+    <!--                <li ><a href="media.html">Media</a></li>
+                    <li ><a href="calendar.html">Calendar</a></li>-->
+  </ul>
+
+  <a data-toggle="collapse" class="nav-header" href="#helpcenter-menu"><i class="icon-question-sign"></i>帮助中心</a>
+  <ul class="nav nav-list collapse" id="helpcenter-menu">
+    <li><a href=""><i class="icon-plus"></i>新建类型</a></li>
+    <li><a href=""><i class="icon-list"></i>类型管理</a></li>
+    <li><a href=""><i class="icon-plus"></i>添加帮助</a></li>
+    <li><a href=""><i class="icon-list"></i>帮助列表</a></li>
+  </ul>
+
+  <a data-toggle="collapse" class="nav-header" href="#accounts-menu"><i class="icon-user"></i>用户管理</a>
+  <ul class="nav nav-list collapse in" id="accounts-menu">
+    <li><a href=""><i class="icon-plus"></i>创建用户</a></li>
+    <li><a href=""><i class="icon-list"></i>用户列表</a></li>
+    <li><a href=""><i class="icon-star"></i>权限控制</a></li>
+  </ul>
+
+  <a data-toggle="collapse" class="nav-header" href="#album-menu"><i class="icon-picture"></i>相册管理</a>
+  <ul class="nav nav-list collapse" id="album-menu">
+    <li><a href=""><i class="icon-plus"></i>创建相册</a></li>
+    <li><a href=""><i class="icon-list"></i>相册管理</a></li>
+  </ul>
+
+  <a data-toggle="collapse" class="nav-header" href="#product-menu"><i class="icon-fire"></i>产品中心</a>
+  <ul class="nav nav-list collapse in" id="product-menu">
+    <li><%= link_to '创建产品' ,new_admin_product_path %>
+    <li><%= link_to '产品管理' , admin_products_path %></li>
+    <li><%= link_to '新建产品类型',new_admin_category_path %></li>
+    <li><%= link_to '产品类型管理',admin_categories_path %></li>
+  </ul>
+
+  <a data-toggle="collapse" class="nav-header" href="#jobs-menu"><i class="icon-bullhorn"></i>招聘管理</a>
+  <ul class="nav nav-list collapse in" id="jobs-menu">
+    <li><a href=""><i class="icon-plus"></i>发布职位</a></li>
+    <li><a href=""><i class="icon-list"></i>管理职位</a></li>
+    <li><a href=""><i class="icon-list"></i>职位类型管理</a></li>
+  </ul>
+
+  <a data-toggle="collapse" class="nav-header" href="#legal-menu"><i class="icon-cog"></i>系统管理</a>
+  <ul class="nav nav-list collapse in" id="legal-menu">
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms and Conditions</a></li>
+  </ul>
+
+  <!--
+  <a href="help.html" class="nav-header" ><i class="icon-question-sign"></i>Help</a>
+  <a href="faq.html" class="nav-header" ><i class="icon-comment"></i>Faq</a>
+  -->
+</div>
 
 <%= yield %>
 

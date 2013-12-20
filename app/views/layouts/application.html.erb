@@ -35,7 +35,7 @@
     <div class="container">
       <div class="row-fluid">
         <div class="span4 logo">
-          <div class="fleft"><a href="#"><img alt="Locomote" src="images/logo.png"></a></div>
+          <div class="fleft"><a href="#"><img alt="Locomote" src="/images/logo.png"></a></div>
         </div>
         <div class="span8 menu">
           <div class="navstyle">
@@ -46,8 +46,8 @@
                     <!-- Dynamic Menu Begin CSS Output -->
                     <div id="cat_1207138_divs">
                       <ul id="nav_1207138">
-                        <li class="selected"><a href="#">主页</a></li>
-                        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle">产品展示<i class="icon-slidedown"></i></a>
+                        <li class="selected"><%= link_to '主页' ,root_path %></li>
+                        <li class="dropdown"><%= link_to '产品展示' , products_path %>
                           <ul id="navsub_1207138_596436" class="dropdown-menu">
                             <% @parent_categories = Category.where(:parent_id => 0) %>
                             <% @parent_categories.each do |f| %>
@@ -55,29 +55,22 @@
                                 <% end %>
                           </ul>
                         </li>
-                        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle">新闻资讯<i class="icon-slidedown"></i></a>
+                        <li class="dropdown"><%= link_to '最新动态',articles_path %>
                           <ul id="navsub_1207138_596445" class="dropdown-menu">
-                            <li><a href="#">Full List of Apps</a></li>
-                            <li><a href="#">Payment Processing</a></li>
-                            <li><a href="#">Corporate Booking Tool</a></li>
-                            <li><a href="#">Airline Risk Calculator</a></li>
-                            <li><a href="#">Ground Transportation</a></li>
-                            <li><a href="#">Expense Management</a></li>
-                            <li><a href="#">Traveller Tracking</a></li>
-                            <li><a href="#">Developer Network</a></li>
+                            <% @types = Type.all %>
+                            <% @types.each do |f| %>
+                            <li><a href="article"><%= f.name %></a></li>
+                                <% end %>
                           </ul>
                         </li>
-                        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle">关于我们<i class="icon-slidedown"></i></a>
+                        <li class="dropdown"><%= link_to '关于我们', controller: 'articles', action: 'about_us' %>
                           <ul id="navsub_1207138_596454" class="dropdown-menu">
-                            <li><a href="#">Management Team</a></li>
-                            <li><a href="#">Partners</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Other Projects</a></li>
-                            <li><a href="#">Contact Us</a></li>
+
+                            <li><%= link_to '联系我们' , controller: 'articles', action: 'contact_us' %></li>
+                            <li><%= link_to '合作伙伴' , controller: 'articles', action: 'partner' %></li>
                           </ul>
                         </li>
-                        <li><a href="#">招贤纳士</a></li>
+                        <li><%= link_to '招贤纳士',jobs_path %></li>
                       </ul>
                     </div>
                     <!-- Dynamic Menu End CSS Output -->

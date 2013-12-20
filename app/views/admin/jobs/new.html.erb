@@ -1,0 +1,97 @@
+<div class="content">
+
+  <div class="header">
+
+    <h1 class="page-title">Create Article</h1>
+  </div>
+
+  <ul class="breadcrumb">
+    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+    <li><a href="users.html">文章管理</a> <span class="divider">/</span></li>
+    <li class="active">新建文章</li>
+  </ul>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <!--
+      <div class="btn-toolbar">
+          <button class="btn btn-primary"><i class="icon-save"></i> Save</button>
+
+          <a href="#myModal" data-toggle="modal" class="btn">Delete</a>
+          <div class="btn-group">
+          </div>
+      </div>
+      -->
+      <div class="well">
+        <!--
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+            <li><a href="#profile" data-toggle="tab">Password</a></li>
+        </ul>-->
+
+        <!--form-->
+        <div class="tab-content" id="myTabContent">
+          <div id="home" class="tab-pane active in">
+            <%= form_for ([:admin,@job]) do |f| %>
+                <label class="required" for="Article_titile"> 标题 <span class="required">*</span></label>
+                <%= f.text_field :title %>
+                <label for="Article_keyword">人数</label>
+                <%= f.text_field :amount %>
+                <label for="Article_author">地点</label>
+                <%= f.text_field :location %>
+                <label for="Article_source">薪水</label>
+                <%= f.text_field :wage %>
+
+                <label for="Article_thumbnail">岗位职责</label>
+                <%= f.text_area :responsibility %>
+                <label for="Article_thumbnail">岗位要求</label>
+                <%= f.text_area :qualification %>
+                <div class="btn-toolbar">
+                  <!--<button class="btn btn-primary"><i class="icon-save"></i> Save</button>-->
+                   <!--<a href="#myModal" data-toggle="modal" class="btn">Delete</a>-->
+                  <%= submit_tag 'Create',class: 'btn btn-primary '%>
+                  <input type="reset" value="Reset" name="yt1" class="btn btn-primary">
+                </div>
+            <% end %>
+          </div>
+
+        </div>
+
+        <script src="/com/editor/kindeditor.js" charset="utf-8"></script>
+        <script src="/com/editor/lang/zh_CN.js" charset="utf-8"></script>
+        <script>
+            var editor;
+            KindEditor.ready(function(K) {
+                editor = K.create('#edit_content');
+            });
+        </script>
+      </div>
+
+      <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal small hide fade">
+        <div class="modal-header">
+          <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+          <h3 id="myModalLabel">Delete Confirmation</h3>
+        </div>
+        <div class="modal-body">
+          <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the user?</p>
+        </div>
+        <div class="modal-footer">
+          <button aria-hidden="true" data-dismiss="modal" class="btn">Cancel</button>
+          <button data-dismiss="modal" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+
+
+
+      <footer>
+        <hr>
+
+        <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
+        <p class="pull-right">A <a target="_blank" href="http://www.portnine.com/bootstrap-themes">Free Bootstrap Theme</a> by <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+
+        <p>&copy; 2012 <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+      </footer>
+
+    </div>
+  </div>
+</div>

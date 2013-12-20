@@ -1,0 +1,20 @@
+// Place all the styles related to the admin/products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#line-chart {
+  height: 300px;
+  margin: 1em auto 0;
+  width: 800px;
+}
+.brand {
+  font-family: georgia,serif;
+}
+.brand .first {
+  color: #CCCCCC;
+  font-style: italic;
+}
+.brand .second {
+  color: #FFFFFF;
+  font-weight: bold;
+}

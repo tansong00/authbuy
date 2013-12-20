@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131218095124) do
+ActiveRecord::Schema.define(version: 20131220054613) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -19,14 +19,30 @@ ActiveRecord::Schema.define(version: 20131218095124) do
     t.string   "key_word"
     t.string   "author"
     t.string   "origin"
-    t.string   "content"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "categories", force: true do |t|
     t.string   "name"
     t.integer  "parent_id",  default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobs", force: true do |t|
+    t.string   "title"
+    t.text     "responsibility"
+    t.text     "qualification"
+    t.string   "location"
+    t.string   "wage"
+    t.string   "amount"
+    t.string   "other"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,6 +58,12 @@ ActiveRecord::Schema.define(version: 20131218095124) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

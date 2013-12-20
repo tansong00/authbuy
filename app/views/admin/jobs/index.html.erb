@@ -1,0 +1,62 @@
+
+
+
+<div class="content">
+
+  <div class="header">
+    <h1 class="page-title">Jobs Maneger</h1>
+  </div>
+
+  <ul class="breadcrumb">
+    <li><a href="">Home</a> <span class="divider">/</span></li>
+    <li class="active">职位管理</li>
+  </ul>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="btn-toolbar">
+        <%= link_to '发布新职位', new_admin_job_path, class: 'btn btn-primary' %>
+        <div class="btn-group">
+        </div>
+      </div>
+    </div>
+    <div class="well">
+      <div class="grid-view" id="jobs-grid">
+        <div class="summary">第 1-5 条, 共 5 条.</div>
+        <table class="items table table-striped">
+          <thead>
+          <tr>
+            <th id="jobs-grid_c0">ID</th><th id="jobs-grid_c">职位标题</th><th id="jobs-grid_c4">发布时间</th><th id="jobs-grid_c5" class="button-column">&nbsp;</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @jobs.each do |job| %>
+              <tr class="odd">
+                <td><%= job.id %></td>
+                <td><%= job.title%></td>
+                <td><%= job.created_at.strftime("%y-%m-%d") %></td>
+                <td><%= link_to '查看', admin_job_path(job) %><span class="separator">|</span>
+                  <%= link_to '编辑',edit_admin_job_path(job) %><span class="separator">|</span>
+                  <%= link_to '删除',admin_job_path(job), :method => :delete %>
+                </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div title="/index.php?r=jobs/admin" style="display:none" class="keys"><span>1</span><span>2</span><span>5</span><span>6</span><span>7</span></div>
+      </div>	</div>
+    <div class="pagination">
+      <ul></ul>
+    </div>
+
+    <footer>
+      <hr>
+
+      <!-- Purchase a site license to remove this link from the footer: http://www.portnine.com/bootstrap-themes -->
+      <p class="pull-right">A <a target="_blank" href="http://www.portnine.com/bootstrap-themes">Free Bootstrap Theme</a> by <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+
+      <p>&copy; 2012 <a target="_blank" href="http://www.portnine.com">Portnine</a></p>
+    </footer>
+
+  </div>
+</div>
