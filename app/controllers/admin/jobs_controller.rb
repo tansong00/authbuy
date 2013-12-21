@@ -1,7 +1,7 @@
 class Admin::JobsController < Admin::ApplicationController
 
   def index
-    @jobs = Job.all
+    @jobs = Job.all.page params[:page]
   end
 
   def new
@@ -22,6 +22,26 @@ class Admin::JobsController < Admin::ApplicationController
     @job.destroy
     redirect_to admin_jobs_path
   end
+
+  def edit
+    @job = Job.find(params[:id])
+  end
+
+  def update
+    @job = Job.find(params[:id])
+    @job.update_attributes job_params
+    if @job.save
+      redirect_to admin_jobs_path
+    else
+      render :new
+    end
+  end
+
+  def show
+    @job = Job.find(params[:id])
+  end
+
+
 
   private
 

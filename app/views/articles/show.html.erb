@@ -1,0 +1,39 @@
+<section id="mid">
+  <div class="container mid_cont h_cont">
+    <div class="row-fluid">
+      <h1>Blog</h1>
+      <div class="innerpad1 pad1 h_cont">
+        <h2>Ideas Thoughts Insights</h2>
+      </div>
+      <h4><a href="#">Click here back to news list.</a></h4>
+      <hr class="brd1" style="margin-bottom: 15px;">
+      <div class="blogcontent">
+        <div class="blog-container">
+          <div class="news-detail clear">
+            <div class="blog-post">
+              <h2 class="post-title"> <a href="#" title="Taking on Risk, Embracing Rejection and Other Lessons"><%= @article.title %></a> </h2>
+              <div class="post-details"><%= @article.created_at.strftime("%y-%m-%d") %></div>
+              <div class="post-body clearfix">
+                <%= image_tag @article.photo.url(:large) ,class: 'pull-left '%>
+                <%= simple_format @article.content %>
+            </div>
+
+            <div class="blog-post">
+              <ul class="pager">
+                <% if @pre_article.present? %>
+                <li class="previous">&larr; <%= link_to 'Previous',article_path(@pre_article) %></li>
+                <% end %>
+                <% if @ne_article.present? %>
+                <li class="next"> <%= link_to 'Next' , article_path(@ne_article)%> &rarr;</li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          <!-- END .wrapper -->
+        </div>
+        <!-- END .blog-container -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

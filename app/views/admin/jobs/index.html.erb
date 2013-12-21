@@ -8,7 +8,7 @@
   </div>
 
   <ul class="breadcrumb">
-    <li><a href="">Home</a> <span class="divider">/</span></li>
+    <li><%= link_to 'Home',root_path %> <span class="divider">/</span></li>
     <li class="active">职位管理</li>
   </ul>
 
@@ -22,7 +22,7 @@
     </div>
     <div class="well">
       <div class="grid-view" id="jobs-grid">
-        <div class="summary">第 1-5 条, 共 5 条.</div>
+        <div class="summary"> 共 <%= @size %>条.</div>
         <table class="items table table-striped">
           <thead>
           <tr>
@@ -37,16 +37,16 @@
                 <td><%= job.created_at.strftime("%y-%m-%d") %></td>
                 <td><%= link_to '查看', admin_job_path(job) %><span class="separator">|</span>
                   <%= link_to '编辑',edit_admin_job_path(job) %><span class="separator">|</span>
-                  <%= link_to '删除',admin_job_path(job), :method => :delete %>
+                  <%= link_to '删除',admin_job_path(job), method: :delete %>
                 </td>
               </tr>
           <% end %>
           </tbody>
         </table>
-        <div title="/index.php?r=jobs/admin" style="display:none" class="keys"><span>1</span><span>2</span><span>5</span><span>6</span><span>7</span></div>
+
       </div>	</div>
     <div class="pagination">
-      <ul></ul>
+        <%= paginate @jobs %>
     </div>
 
     <footer>

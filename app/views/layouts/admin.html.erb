@@ -3,7 +3,7 @@
 <head>
   <title>后台管理</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "admin/application.css", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -27,16 +27,16 @@
       </li>
 
     </ul>
-    <a href="" class="brand"><span class="first">Your</span> <span class="second">Company</span></a>
+    <a href="index.html" class="brand"><span class="first">Your</span> <span class="second">Company</span></a>
   </div>
 </div>
 <div class="sidebar-nav">
   <a data-toggle="collapse" class="nav-header" href="#dashboard-menu"><i class="icon-pencil"></i>文章管理</a>
   <ul class="nav nav-list collapse in" id="dashboard-menu">
-    <li><%= link_to '新建文章',new_admin_article_path %></li>
-    <li><%= link_to '文章列表',admin_articles_path %></li>
-    <li><%= link_to '新建文章类型',new_admin_type_path %></li>
-    <li><%= link_to '文章类型管理',admin_types_path %></li>
+    <li><a href=""><i class="icon-plus"></i>新建文章</a></li>
+    <li><a href=""><i class="icon-list"></i>文章列表</a></li>
+    <li><a href=""><i class="icon-plus"></i>新建文章类型</a></li>
+    <li><a href=""><i class="icon-list"></i>文章类型管理</a></li>
     <!--                <li ><a href="media.html">Media</a></li>
                     <li ><a href="calendar.html">Calendar</a></li>-->
   </ul>
@@ -64,17 +64,16 @@
 
   <a data-toggle="collapse" class="nav-header" href="#product-menu"><i class="icon-fire"></i>产品中心</a>
   <ul class="nav nav-list collapse in" id="product-menu">
-    <li><%= link_to '创建产品' ,new_admin_product_path %>
-    <li><%= link_to '产品管理' , admin_products_path %></li>
-    <li><%= link_to '新建产品类型',new_admin_category_path %></li>
-    <li><%= link_to '产品类型管理',admin_categories_path %></li>
+    <li><a href=""><i class="icon-plus"></i>创建产品</a></li>
+    <li><a href=""><i class="icon-list"></i>产品管理</a></li>
+    <li><a href=""><i class="icon-plus"></i>新建产品类型</a></li>
+    <li><a href=""><i class="icon-list"></i>产品类型管理</a></li>
   </ul>
 
   <a data-toggle="collapse" class="nav-header" href="#jobs-menu"><i class="icon-bullhorn"></i>招聘管理</a>
   <ul class="nav nav-list collapse in" id="jobs-menu">
-    <li><a href=""><i class="icon-plus"></i>发布职位</a></li>
-    <li><a href=""><i class="icon-list"></i>管理职位</a></li>
-    <li><a href=""><i class="icon-list"></i>职位类型管理</a></li>
+    <li><%= link_to '发布职位',new_admin_job_path %></li>
+    <li><%= link_to '管理职位',admin_jobs_path %></li>
   </ul>
 
   <a data-toggle="collapse" class="nav-header" href="#legal-menu"><i class="icon-cog"></i>系统管理</a>

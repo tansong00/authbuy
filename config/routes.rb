@@ -10,13 +10,14 @@ Authbuy::Application.routes.draw do
        get :about_us
        get :contact_us
        get :partner
+       get :list
      end
    end
    resources :jobs
 
 
    namespace :admin do
-     root 'dashboard#index'
+     root 'dashboards#index'
      resources :products
      resources :categories
      resources :articles

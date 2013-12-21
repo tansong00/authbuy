@@ -1,0 +1,49 @@
+<div class="blogcontent">
+  <div class="blog-container">
+    <div class="wrapper clear">
+      <div class="post-list">
+        <div id="catblogoutput">
+          <% @articles.each do |article| %>
+          <div class="blog-post">
+            <h2 class="post-title"> <a title="新闻资讯test2" href=""><%= article.title %></a> </h2>
+            <div class="post-details">发布时间：<%= article.created_at %> </div>
+            <div class="post-body">
+              <p class="p1">
+                <%= simple_format article.content.truncate(30) %>
+                <span><%= link_to  'Read all',article_path(article)%> </span>
+                </a>
+              </p>
+            </div>
+          </div>
+           <% end %>
+
+        </div>
+
+        <div class="blog-post">
+          <div class="pagination">
+
+            <!--                                    <ul>
+                                <li><a href="#">Previous</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li class="disabled"><a href="#">...</a></li>
+                                <li><a href="#">11</a></li>
+                                <li><a href="#">12</a></li>
+                                <li><a href="#">Next</a></li>
+                            </ul>-->
+          </div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <h4 class="tab"><a href="#">新闻资讯</a></h4>
+        <h4 class="tab"><a href="#">企业动态</a></h4>
+        <h4 class="tab"><a href="#">最新活动</a></h4>
+        <div class="dotted-break"></div>
+      </div>
+    </div>
+    <!-- END .wrapper -->
+  </div>
+  <!-- END .blog-container -->
+</div>

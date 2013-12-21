@@ -7,8 +7,8 @@
 
   <ul class="breadcrumb">
     <li><%= link_to 'Home',admin_root_path %> <span class="divider">/</span></li>
-    <li><%= link_to '招聘管理',admin_jobs_path %> <span class="divider">/</span></li>
-    <li class="active">发布职位</li>
+    <li><%= link_to '职位管理',admin_jobs_path %> <span class="divider">/</span></li>
+    <li class="active">职位详情</li>
   </ul>
 
   <div class="container-fluid">
@@ -32,29 +32,26 @@
         <!--form-->
         <div class="tab-content" id="myTabContent">
           <div id="home" class="tab-pane active in">
-            <%= form_for ([:admin,@job]) do |f| %>
                 <label class="required" for="Article_titile"> 标题 <span class="required">*</span></label>
-                <%= f.text_field :title %>
+                <%= text_field_tag 'title',@job.title %>
                 <label for="Article_keyword">人数</label>
-                <%= f.text_field :amount %>
+                <%= text_field_tag 'amount', @job.amount %>
                 <label for="Article_author">地点</label>
-                <%= f.text_field :location %>
+                <%= text_field_tag 'location', @job.location %>
                 <label for="Article_source">薪水</label>
-                <%= f.text_field :wage %>
+                <%= text_field_tag 'wage',@job.wage %>
 
                 <label for="Article_thumbnail">岗位职责</label>
-                <%= f.text_area :responsibility, cols: 50, rows: 6 %>
+                <%= text_area_tag 'responsibility',@job.responsibility, cols: 50, rows: 6 %>
                 <label for="Article_thumbnail">岗位要求</label>
-                <%= f.text_area :qualification, rows: 6 %>
+                <%= text_area_tag 'qualification',@job.qualification, rows: 6 %>
                 <label for="Article_thumbnail">Other</label>
-                <%= f.text_area :other, rows: 6 %>
+                <%= text_area_tag 'other',@job.other, rows: 6 %>
                 <div class="btn-toolbar">
                   <!--<button class="btn btn-primary"><i class="icon-save"></i> Save</button>-->
-                   <!--<a href="#myModal" data-toggle="modal" class="btn">Delete</a>-->
-                  <%= submit_tag 'Create',class: 'btn'%>
-                  <%= link_to '返回',admin_jobs_path, class: 'btn' %>
+                  <!--<a href="#myModal" data-toggle="modal" class="btn">Delete</a>-->
+                  <%= link_to '返回',admin_jobs_path ,class: 'btn'%>
                 </div>
-            <% end %>
           </div>
 
         </div>

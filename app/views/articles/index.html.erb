@@ -12,12 +12,13 @@
           <% @types.each do |type| %>
           <div class="newItem span6">
             <h1><a href="#"> <%= type.name %></a></h1>
+            <% @articles = Article.where(:type_id => type.id).order('created_at DESC').limit(5) %>
+            <% @articles.each do |article| %>
             <ul>
-              <li><a href="#">It provides deep specific information</a></li>
-              <li><a href="#">Most travel buyers negotiate airline</a></li>
-              <li><a href="#">This might seem an obvious thing to do.</a></li>
+              <li><a href="<%= params[:controller] %>/<%= article.id %>"><%= article.title %></a></li>
             </ul>
-            <p><a href="#">view more...</a></p>
+                <% end %>
+            <p><%= link_to 'view more...', controller: 'articles', action: 'list', id: type.id %></p>
           </div>
            <% end %>
           <div class="cont_clear"></div>

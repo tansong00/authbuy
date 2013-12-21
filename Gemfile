@@ -48,3 +48,5 @@ end
 gem 'paperclip'
 gem 'kaminari'
 gem 'ckeditor'
+
+gem 'better_errors'
