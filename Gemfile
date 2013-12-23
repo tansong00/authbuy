@@ -50,3 +50,6 @@ gem 'kaminari'
 gem 'ckeditor'
 
 gem 'better_errors'
+
+gem 'devise'
+gem 'sorcery'

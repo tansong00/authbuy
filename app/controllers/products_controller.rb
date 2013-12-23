@@ -8,4 +8,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def list
+    @products = Product.where(:category_id => params[:id]).page(params[:page])
+  end
+
 end

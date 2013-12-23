@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Login</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</head>
+<body>
+<div class="w-login">
+  <div class="navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content login">
+      <div class="row-fluid">
+        <div class="well">
+          <div class="logo"><img alt="Login-tmp-logo" src="/images/login-tmp-logo-6caef67f31b15ff912e354181a6cec4d.gif" height="35" width="379"></div>
+          <%= form_tag sessions_path, autocomplete: 'off' ,class: 'simple_form form-horizontal padd' do  %>
+
+            <div style="margin: 0; padding: 0; display: inline;">
+
+            </div>
+            <div class="control-group string required user_email">
+              <label class="string required control-label" for="user_email"><abbr title="required">*</abbr> Email</label>
+              <div class="controls">
+                <%= text_field_tag :email, params[:email],class: 'string required', placeholder: 'username' %>
+              </div>
+            </div>
+            <div class="control-group password required user_password">
+              <label class="password required control-label" for="user_password"><abbr title="required">*</abbr> Password</label>
+              <div class="controls">
+                <%= password_field_tag :password  %>
+              </div>
+            </div>
+            <div class="controls">
+              <%= submit_tag '登 录', class: 'btn' %>
+              <span class="help-inline"><a href="#">Forgot your password?</a></span>
+            </div>
+              <% end %>
+        </div>
+        <div class="info">
+          <strong>Need an account?</strong> Contact&nbsp;<a href="#">Locomote</a> to organise a demonstration.
+        </div>
+        <div class="w-copy">
+          <ul>
+            <li><a class="info-link" href="#">Terms of Use</a></li>
+            <li>|</li>
+            <li><a class="info-link" href="#">Privacy Policy</a></li>
+          </ul>
+          <span class="copy">© Locomote Technologies Trading Pty Ltd</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -4,7 +4,12 @@ Authbuy::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'dashboards#index'
-   resources :products
+   resources :sessions
+   resources :products do
+     collection do
+       get :list
+     end
+   end
    resources :articles do
      collection do
        get :about_us

@@ -1,6 +1,6 @@
 class Admin::ArticlesController < Admin::ApplicationController
   def index
-    @articles = Article.all.page(params[:page])
+    @articles = Article.all.order('created_at DESC').page(params[:page])
   end
 
   def new
@@ -34,6 +34,10 @@ class Admin::ArticlesController < Admin::ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   def article_params

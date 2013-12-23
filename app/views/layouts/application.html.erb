@@ -51,7 +51,7 @@
                           <ul id="navsub_1207138_596436" class="dropdown-menu">
                             <% @parent_categories = Category.where(:parent_id => 0) %>
                             <% @parent_categories.each do |f| %>
-                            <li><a href="#"><%= f.name %></a></li>
+                            <li><a href="/products/list?id=<%= f.id %>"><%= f.name %></a></li>
                                 <% end %>
                           </ul>
                         </li>
@@ -59,7 +59,7 @@
                           <ul id="navsub_1207138_596445" class="dropdown-menu">
                             <% @types = Type.all %>
                             <% @types.each do |f| %>
-                            <li><a href="article"><%= f.name %></a></li>
+                            <li><a href="/articles/list?id=<%= f.id %>"><%= f.name %></a></li>
                                 <% end %>
                           </ul>
                         </li>
@@ -71,6 +71,7 @@
                           </ul>
                         </li>
                         <li><%= link_to '招贤纳士',jobs_path %></li>
+                        <li><a target="_top" <%= link_to 'Login',new_session_path %></li>
                       </ul>
                     </div>
                     <!-- Dynamic Menu End CSS Output -->

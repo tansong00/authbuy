@@ -1,0 +1,21 @@
+<section id="mid">
+  <div class="container mid_cont pad8">
+    <div class="row-fluid w-product">
+      <div class="row innerpad1 h_cont pad7 tab1 product-list">
+        <div class="trans hover" id="backBoard"></div>
+        <% @products.each do |product| %>
+            <dl class="proItem">
+              <dt><a href="products/<%= product.id %>"> <%= image_tag product.photo.url(:middle) %></a></dt>
+              <dd class="red">Price: <em>US</em> $<%= product.price%></dd>
+              <dd class="lightGray"><%= product.created_at.strftime("%y-%m-%d") %></dd>
+            </dl>
+
+        <% end %>
+
+      </div>
+      <div class="pagination pagination-right innerpad1">
+        <%= paginate @products %>
+      </div>
+    </div>
+  </div>
+</section>
